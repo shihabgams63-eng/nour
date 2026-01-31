@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Nour | Distinguished Medical Doctor</title>
+    <title>Dr. NOUR | Pharmacy Visionary</title>
     
     <!-- GSAP for Advanced Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
@@ -12,7 +12,7 @@
     <style>
         /* ===== ADVANCED VARIABLES ===== */
         :root {
-            /* Default Quantum Colors */
+            /* Enhanced Quantum Colors */
             --quantum-primary: #FF2E93;
             --quantum-secondary: #9D4DFF;
             --quantum-accent: #00F7FF;
@@ -21,6 +21,7 @@
             --quantum-text: #FFFFFF;
             --quantum-gradient: linear-gradient(135deg, #FF2E93 0%, #9D4DFF 50%, #00F7FF 100%);
             --text-gradient: linear-gradient(90deg, #FF2E93, #9D4DFF, #00F7FF);
+            --gold-gradient: linear-gradient(90deg, #FFD700, #FFA500, #FFEC8B);
             
             /* Music Player Variables */
             --music-player-bg: linear-gradient(145deg, #0A0A1A, #1A1A2E);
@@ -166,7 +167,7 @@
             100% { transform: translate(-50px, -30px) scale(0.98); }
         }
 
-        /* ===== ADVANCED TYPOGRAPHY ===== */
+        /* ===== ENHANCED TYPOGRAPHY ===== */
         .gradient-text {
             background: var(--text-gradient);
             -webkit-background-clip: text;
@@ -202,7 +203,7 @@
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* ===== SIDEBAR CONTROLS ===== */
+        /* ===== ENHANCED SIDEBAR CONTROLS ===== */
         .sidebar-controls {
             position: fixed;
             left: 2rem;
@@ -221,18 +222,18 @@
         }
 
         .control-btn {
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 2px solid rgba(255, 255, 255, 0.15);
             color: var(--quantum-text);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             position: relative;
             overflow: hidden;
         }
@@ -246,28 +247,56 @@
             height: 100%;
             background: var(--quantum-gradient);
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.4s;
+        }
+
+        .control-btn::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--quantum-gradient);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            filter: blur(10px);
+            transition: opacity 0.4s;
         }
 
         .control-btn:hover::before {
-            opacity: 0.3;
+            opacity: 0.2;
+        }
+
+        .control-btn:hover::after {
+            opacity: 0.4;
         }
 
         .control-btn:hover {
-            transform: translateX(5px) scale(1.1);
+            transform: translateX(10px) scale(1.1);
             border-color: var(--quantum-primary);
-            box-shadow: 0 0 30px rgba(255, 46, 147, 0.4);
+            box-shadow: 
+                0 0 40px rgba(255, 46, 147, 0.4),
+                0 0 60px rgba(157, 77, 255, 0.2);
         }
 
         .control-btn.active {
             background: var(--quantum-gradient);
             border-color: transparent;
-            box-shadow: 0 0 40px rgba(255, 46, 147, 0.6);
+            box-shadow: 
+                0 0 50px rgba(255, 46, 147, 0.6),
+                0 0 80px rgba(157, 77, 255, 0.3);
         }
 
         .control-btn i {
             position: relative;
             z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .control-btn:hover i {
+            transform: scale(1.2);
         }
 
         /* ===== TOP NAVIGATION ===== */
@@ -281,29 +310,33 @@
         }
 
         .nav-btn {
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 1.8rem;
             background: rgba(19, 19, 43, 0.9);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 2rem;
             color: var(--quantum-text);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-weight: 500;
             font-size: 0.95rem;
             letter-spacing: 0.5px;
         }
 
         .nav-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             border-color: var(--quantum-primary);
-            box-shadow: 0 5px 20px rgba(255, 46, 147, 0.3);
+            box-shadow: 
+                0 10px 25px rgba(255, 46, 147, 0.3),
+                0 0 20px rgba(157, 77, 255, 0.2);
         }
 
         .nav-btn.active {
             background: var(--quantum-gradient);
             border-color: transparent;
-            box-shadow: 0 5px 30px rgba(255, 46, 147, 0.5);
+            box-shadow: 
+                0 10px 35px rgba(255, 46, 147, 0.5),
+                0 0 30px rgba(157, 77, 255, 0.3);
         }
 
         /* ===== PAGES SYSTEM ===== */
@@ -335,7 +368,7 @@
             position: relative;
         }
 
-        /* ===== HOME PAGE ===== */
+        /* ===== ENHANCED HOME PAGE ===== */
         #home-page {
             display: flex;
             align-items: center;
@@ -357,133 +390,348 @@
             gap: 1.5rem;
         }
 
-        /* Enhanced Dr. Nour Animation */
-        .hero-title {
-            font-size: 4rem;
+        /* ENHANCED NAME DESIGN - NOUR */
+        .name-container {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .hero-name {
+            font-size: 6.5rem;
             font-weight: 800;
-            line-height: 1.1;
-            background: var(--text-gradient);
+            line-height: 1;
+            background: linear-gradient(135deg, 
+                #FF2E93 0%, 
+                #FF6B9D 25%, 
+                #9D4DFF 50%, 
+                #6366F1 75%, 
+                #00F7FF 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             position: relative;
             display: inline-block;
             cursor: pointer;
-            text-shadow: 0 0 20px rgba(255, 46, 147, 0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: textGlow 3s ease-in-out infinite alternate;
+            text-shadow: 
+                0 0 30px rgba(255, 46, 147, 0.4),
+                0 0 60px rgba(157, 77, 255, 0.3),
+                0 0 90px rgba(0, 247, 255, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: nameGlow 4s ease-in-out infinite alternate;
+            letter-spacing: 2px;
+            font-family: 'Inter', sans-serif;
         }
 
-        .hero-title::before {
+        .hero-name::before {
+            content: 'NOUR';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            background: linear-gradient(135deg, 
+                #FF2E93 0%, 
+                #FF6B9D 25%, 
+                #9D4DFF 50%, 
+                #6366F1 75%, 
+                #00F7FF 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            z-index: -1;
+            filter: blur(15px);
+            opacity: 0.7;
+        }
+
+        .hero-name::after {
             content: '';
             position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
             bottom: -10px;
-            background: var(--text-gradient);
-            z-index: -1;
-            filter: blur(20px);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            border-radius: 10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                #FF2E93 0%, 
+                #9D4DFF 50%, 
+                #00F7FF 100%);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .hero-title:hover {
-            transform: scale(1.08);
-            letter-spacing: 1px;
+        .hero-name:hover {
+            transform: scale(1.05);
+            letter-spacing: 3px;
         }
 
-        .hero-title:hover::before {
-            opacity: 0.3;
+        .hero-name:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* NEW: BIG "NOUR my best friend" TITLE */
+        .best-friend-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(135deg, 
+                #FFD700 0%, 
+                #FFA500 25%, 
+                #FFEC8B 50%, 
+                #FFD700 75%, 
+                #FFA500 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            cursor: pointer;
+            text-shadow: 
+                0 0 30px rgba(255, 215, 0, 0.6),
+                0 0 60px rgba(255, 165, 0, 0.4),
+                0 0 90px rgba(255, 236, 139, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: goldGlow 3s ease-in-out infinite alternate;
+            letter-spacing: 1.5px;
+            font-family: 'Inter', sans-serif;
+            padding: 0.5rem 0;
+        }
+
+        .best-friend-title::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #FFD700 20%, 
+                #FFA500 50%, 
+                #FFD700 80%, 
+                transparent 100%);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .best-friend-title:hover {
+            transform: scale(1.05);
+            letter-spacing: 2px;
+        }
+
+        .best-friend-title:hover::before {
+            transform: scaleX(1);
+        }
+
+        .best-friend-title i {
+            font-size: 3.5rem;
+            filter: drop-shadow(0 0 15px #FFD700);
+            animation: crownBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes goldGlow {
+            0% {
+                text-shadow: 
+                    0 0 30px rgba(255, 215, 0, 0.6),
+                    0 0 60px rgba(255, 165, 0, 0.4);
+            }
+            100% {
+                text-shadow: 
+                    0 0 50px rgba(255, 215, 0, 0.8),
+                    0 0 80px rgba(255, 165, 0, 0.6),
+                    0 0 120px rgba(255, 236, 139, 0.4);
+            }
+        }
+
+        @keyframes crownBounce {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                filter: drop-shadow(0 0 15px #FFD700);
+            }
+            50% {
+                transform: translateY(-10px) rotate(15deg);
+                filter: drop-shadow(0 0 25px #FFD700);
+            }
+        }
+
+        /* ENHANCED PHARMACY DESCRIPTION BADGE */
+        .pharmacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, 
+                rgba(255, 46, 147, 0.15), 
+                rgba(157, 77, 255, 0.15));
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            border: 1px solid rgba(255, 46, 147, 0.3);
+            margin-top: 1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: badgeGlow 3s ease-in-out infinite alternate;
+            box-shadow: 
+                0 10px 30px rgba(255, 46, 147, 0.2),
+                0 0 40px rgba(157, 77, 255, 0.1);
+        }
+
+        .pharmacy-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 40px rgba(255, 46, 147, 0.3),
+                0 0 50px rgba(157, 77, 255, 0.2);
+        }
+
+        .pharmacy-badge i {
+            color: var(--quantum-accent);
+            font-size: 1.8rem;
+            filter: drop-shadow(0 0 10px var(--quantum-accent));
+        }
+
+        .pharmacy-badge span {
+            font-size: 1.4rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, 
+                #FF2E93 0%, 
+                #FF6B9D 25%, 
+                #9D4DFF 75%, 
+                #6366F1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 0.8px;
+            text-shadow: 0 0 10px rgba(255, 46, 147, 0.3);
+        }
+
+        @keyframes badgeGlow {
+            0% {
+                box-shadow: 
+                    0 10px 30px rgba(255, 46, 147, 0.2),
+                    0 0 40px rgba(157, 77, 255, 0.1);
+            }
+            100% {
+                box-shadow: 
+                    0 15px 40px rgba(255, 46, 147, 0.4),
+                    0 0 60px rgba(157, 77, 255, 0.3),
+                    0 0 80px rgba(0, 247, 255, 0.1);
+            }
+        }
+
+        @keyframes nameGlow {
+            0% {
+                text-shadow: 
+                    0 0 30px rgba(255, 46, 147, 0.4),
+                    0 0 60px rgba(157, 77, 255, 0.3);
+            }
+            100% {
+                text-shadow: 
+                    0 0 50px rgba(255, 46, 147, 0.6),
+                    0 0 80px rgba(157, 77, 255, 0.4),
+                    0 0 120px rgba(0, 247, 255, 0.3);
+            }
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--quantum-accent);
-            line-height: 1.6;
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
             font-weight: 300;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            margin-top: 1rem;
         }
 
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .stat-box {
-            background: rgba(255, 255, 255, 0.05);
+            background: linear-gradient(145deg, 
+                rgba(255, 255, 255, 0.05), 
+                rgba(255, 255, 255, 0.02));
             border-radius: 1.5rem;
-            padding: 1.5rem;
+            padding: 1.8rem;
             text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--quantum-gradient);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
         }
 
         .stat-box:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            border-color: var(--quantum-primary);
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(255, 46, 147, 0.2);
+        }
+
+        .stat-box:hover::before {
+            opacity: 0.1;
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             background: var(--text-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            margin-bottom: 0.5rem;
         }
 
         .stat-label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
             margin-top: 0.5rem;
             letter-spacing: 0.5px;
+            font-weight: 400;
         }
 
-        @keyframes textGlow {
-            0% {
-                text-shadow: 
-                    0 0 20px rgba(255, 46, 147, 0.3),
-                    0 0 40px rgba(157, 77, 255, 0.2);
-            }
-            100% {
-                text-shadow: 
-                    0 0 30px rgba(255, 46, 147, 0.5),
-                    0 0 60px rgba(157, 77, 255, 0.3),
-                    0 0 90px rgba(0, 247, 255, 0.2);
-            }
-        }
-
-        /* Symbolic Medical Icon */
-        .medical-symbol {
+        /* ENHANCED PHARMACY SYMBOL */
+        .pharmacy-symbol {
             position: relative;
-            width: 400px;
-            height: 400px;
+            width: 450px;
+            height: 450px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .medical-orb {
+        .pharmacy-orb {
             position: absolute;
             width: 100%;
             height: 100%;
             border-radius: 50%;
             background: var(--quantum-gradient);
-            filter: blur(40px);
-            opacity: 0.3;
+            filter: blur(60px);
+            opacity: 0.4;
             animation: orbPulse 4s ease-in-out infinite;
         }
 
-        .medical-icon {
+        .pharmacy-icon {
             position: absolute;
-            width: 80%;
-            height: 80%;
+            width: 85%;
+            height: 85%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -491,43 +739,65 @@
             z-index: 2;
         }
 
-        .medical-icon i {
-            font-size: 8rem;
-            color: var(--quantum-primary);
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 0 20px rgba(255, 46, 147, 0.5));
-            animation: iconPulse 3s ease-in-out infinite;
+        .pharmacy-icon i {
+            font-size: 10rem;
+            background: var(--text-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 30px rgba(255, 46, 147, 0.6));
+            animation: iconFloat 4s ease-in-out infinite;
         }
 
-        .medical-icon span {
-            font-size: 1.5rem;
+        .pharmacy-icon span {
+            font-size: 1.8rem;
             font-weight: 700;
             background: var(--text-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-align: center;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
-        .medical-frame {
+        .pharmacy-frame {
             position: absolute;
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 3px solid transparent;
+            border: 4px solid transparent;
             background: var(--quantum-gradient) border-box;
             -webkit-mask: 
                 linear-gradient(#fff 0 0) padding-box, 
                 linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
-            animation: rotate 20s linear infinite;
+            animation: rotate 25s linear infinite;
+        }
+
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2.5rem;
+            background: var(--text-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 15px rgba(255, 46, 147, 0.4));
+            animation: floatAround 20s linear infinite;
         }
 
         @keyframes orbPulse {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.4; }
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.15); opacity: 0.5; }
         }
 
         @keyframes rotate {
@@ -535,12 +805,30 @@
             100% { transform: rotate(360deg); }
         }
 
-        @keyframes iconPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
         }
 
-        /* ===== ABOUT PAGE ===== */
+        @keyframes floatAround {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(100px, 50px) rotate(90deg);
+            }
+            50% {
+                transform: translate(50px, 100px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-50px, 50px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        /* ===== ENHANCED ABOUT PAGE ===== */
         #about-page {
             display: flex;
             align-items: center;
@@ -557,7 +845,7 @@
         }
 
         .about-title {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 800;
             margin-bottom: 2rem;
             background: var(--text-gradient);
@@ -573,48 +861,61 @@
 
         .about-title:hover {
             transform: scale(1.03);
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         @keyframes titleGlow {
             0% {
                 text-shadow: 
-                    0 0 15px rgba(255, 46, 147, 0.3),
-                    0 0 30px rgba(157, 77, 255, 0.2);
+                    0 0 20px rgba(255, 46, 147, 0.3),
+                    0 0 40px rgba(157, 77, 255, 0.2);
             }
             100% {
                 text-shadow: 
-                    0 0 25px rgba(255, 46, 147, 0.5),
-                    0 0 50px rgba(157, 77, 255, 0.3);
+                    0 0 35px rgba(255, 46, 147, 0.5),
+                    0 0 65px rgba(157, 77, 255, 0.3),
+                    0 0 95px rgba(0, 247, 255, 0.2);
             }
         }
 
         .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.9;
             color: rgba(255, 255, 255, 0.9);
-            letter-spacing: 0.3px;
+            letter-spacing: 0.4px;
+            font-weight: 300;
         }
 
         .about-text p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
+        /* Enhanced Personal Info */
         .personal-info {
-            background: rgba(255, 255, 255, 0.05);
+            background: linear-gradient(145deg, 
+                rgba(255, 255, 255, 0.05), 
+                rgba(255, 255, 255, 0.02));
             border-radius: 2rem;
-            padding: 2rem;
+            padding: 2.5rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            margin-top: 2rem;
         }
 
         .info-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 0.5rem 0;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(10px);
         }
 
         .info-item:last-child {
@@ -622,21 +923,40 @@
         }
 
         .info-item i {
-            color: var(--quantum-accent);
-            width: 24px;
-            font-size: 1.2rem;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--quantum-gradient);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.3rem;
+            flex-shrink: 0;
         }
 
-        /* Professional Developer Message */
+        .info-item span {
+            font-weight: 300;
+            font-size: 1.05rem;
+        }
+
+        .info-item strong {
+            font-weight: 500;
+            color: var(--quantum-accent);
+        }
+
+        /* Enhanced Developer Message */
         .developer-message {
-            background: linear-gradient(135deg, rgba(255, 46, 147, 0.1), rgba(157, 77, 255, 0.1));
-            border-radius: 1.5rem;
-            padding: 2rem;
-            border: 1px solid rgba(255, 46, 147, 0.2);
-            margin-top: 2rem;
+            background: linear-gradient(135deg, 
+                rgba(255, 46, 147, 0.1), 
+                rgba(157, 77, 255, 0.1));
+            border-radius: 2rem;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 46, 147, 0.25);
+            margin-top: 3rem;
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
         }
 
         .developer-message::before {
@@ -654,268 +974,216 @@
         .message-header {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .message-header i {
-            color: var(--quantum-primary);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--quantum-gradient);
+            border-radius: 50%;
+            color: white;
             font-size: 1.8rem;
+        }
+
+        .message-header h4 {
+            color: var(--quantum-accent);
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
         }
 
         .message-content {
             color: rgba(255, 255, 255, 0.95);
-            line-height: 1.8;
-            font-size: 1.05rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
             letter-spacing: 0.3px;
+            font-weight: 300;
         }
 
         .message-content p {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 2rem;
         }
 
         .message-content p::before {
-            content: '•';
+            content: '✦';
             position: absolute;
             left: 0;
-            color: var(--quantum-accent);
-            font-size: 1.5rem;
+            color: var(--quantum-primary);
+            font-size: 1.2rem;
             line-height: 1;
         }
 
         .message-signature {
             text-align: right;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             color: var(--quantum-accent);
             font-style: italic;
-            font-weight: 600;
+            font-weight: 500;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1.5rem;
+            padding-top: 1.8rem;
         }
 
         .developer-note {
-            background: rgba(255, 46, 147, 0.08);
-            border-radius: 1rem;
-            padding: 1.8rem;
-            border: 1px solid rgba(255, 46, 147, 0.2);
-            margin-top: 2rem;
-            backdrop-filter: blur(10px);
+            background: rgba(255, 46, 147, 0.1);
+            border-radius: 1.5rem;
+            padding: 2.2rem;
+            border: 1px solid rgba(255, 46, 147, 0.25);
+            margin-top: 3rem;
+            backdrop-filter: blur(15px);
         }
 
-        /* ===== EDUCATION PAGE ===== */
-        #education-page {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* ===== ENHANCED EDUCATION PAGE ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .education-content {
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .education-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .university-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 2rem;
-            padding: 2.5rem;
+        .feature-card {
+            background: linear-gradient(145deg, 
+                rgba(255, 255, 255, 0.05), 
+                rgba(255, 255, 255, 0.02));
+            border-radius: 1.8rem;
+            padding: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--quantum-gradient);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: -1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--quantum-accent);
+            box-shadow: 
+                0 15px 40px rgba(0, 247, 255, 0.15),
+                0 0 30px rgba(0, 247, 255, 0.1);
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            background: var(--text-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .feature-card h4 {
+            color: var(--quantum-accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Enhanced University Card */
+        .university-card {
+            background: linear-gradient(145deg, 
+                rgba(255, 255, 255, 0.05), 
+                rgba(255, 255, 255, 0.02));
+            border-radius: 2.5rem;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(15px);
         }
 
         .university-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: var(--quantum-primary);
-            box-shadow: 0 10px 40px rgba(255, 46, 147, 0.2);
-        }
-
-        .major-info {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 2rem;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 20px 50px rgba(255, 46, 147, 0.2),
+                0 0 40px rgba(157, 77, 255, 0.15);
         }
 
         .university-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
+            gap: 1rem;
+            padding: 1.2rem 2.5rem;
             background: var(--quantum-gradient);
             color: white;
             border: none;
             border-radius: 2rem;
             cursor: pointer;
             font-weight: 600;
-            margin-top: 1.5rem;
-            transition: all 0.3s ease;
+            margin-top: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            font-size: 1.1rem;
         }
 
         .university-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 46, 147, 0.4);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 15px 40px rgba(255, 46, 147, 0.4),
+                0 0 35px rgba(157, 77, 255, 0.3);
         }
 
-        /* Medical Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--quantum-accent);
-            box-shadow: 0 5px 20px rgba(0, 247, 255, 0.2);
-        }
-
-        .feature-card i {
-            font-size: 2rem;
-            color: var(--quantum-primary);
-            margin-bottom: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover i {
-            transform: scale(1.1);
-        }
-
-        .feature-card h4 {
-            color: var(--quantum-accent);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .feature-card p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        /* ===== JOURNEY PAGE ===== */
-        #journey-page {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .journey-content {
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 3rem auto 0;
-        }
-
-        .timeline-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 1.5rem;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-            border-color: var(--quantum-primary);
-            box-shadow: 0 5px 20px rgba(255, 46, 147, 0.2);
-        }
-
-        /* ===== CONTACT PAGE ===== */
-        #contact-page {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-content {
-            max-width: 800px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .design-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 2rem;
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 2rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .design-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--quantum-primary);
-            box-shadow: 0 10px 40px rgba(255, 46, 147, 0.2);
-        }
-
-        .designer-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            background: var(--quantum-gradient);
-            color: white;
-            border-radius: 2rem;
-            text-decoration: none;
-            margin-top: 1.5rem;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-        }
-
-        .designer-tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 46, 147, 0.4);
-        }
-
-        /* ===== MUSIC PLAYER ===== */
+        /* ===== ENHANCED MUSIC PLAYER ===== */
         .music-player {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            width: 360px;
-            background: linear-gradient(145deg, rgba(10, 10, 26, 0.95), rgba(26, 26, 46, 0.95));
-            backdrop-filter: blur(30px);
-            border: 1px solid rgba(157, 77, 255, 0.3);
-            border-radius: 24px;
-            padding: 1.8rem;
+            width: 380px;
+            background: linear-gradient(145deg, 
+                rgba(10, 10, 26, 0.95), 
+                rgba(26, 26, 46, 0.95));
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(157, 77, 255, 0.4);
+            border-radius: 28px;
+            padding: 2rem;
             box-shadow: 
-                0 25px 60px rgba(0, 0, 0, 0.8),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1),
-                0 0 0 1px rgba(255, 255, 255, 0.05);
+                0 30px 70px rgba(0, 0, 0, 0.9),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.08);
             transform: translateY(120px) scale(0.9);
             opacity: 0;
-            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
             z-index: 1001;
             overflow: hidden;
         }
@@ -928,7 +1196,7 @@
             width: 100%;
             height: 100%;
             background: var(--quantum-gradient);
-            opacity: 0.05;
+            opacity: 0.08;
             z-index: -1;
         }
 
@@ -941,9 +1209,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .player-header h3 {
@@ -951,176 +1219,158 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .player-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .player-time {
-            color: var(--quantum-accent);
-            font-family: 'Monaco', 'Courier New', monospace;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        .player-progress {
-            width: 100%;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            margin: 1.2rem 0;
-        }
-
-        .player-progress-bar {
-            width: 0%;
-            height: 100%;
-            background: var(--quantum-gradient);
-            border-radius: 10px;
-            transition: width 0.1s linear;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .player-progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: progressShine 2s infinite;
+            letter-spacing: 0.8px;
         }
 
         .player-controls {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1.2rem;
-            margin-top: 1.8rem;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
         }
 
         .player-btn {
-            width: 52px;
-            height: 52px;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
-            background: rgba(30, 30, 60, 0.8);
-            border: 1px solid rgba(157, 77, 255, 0.4);
+            background: linear-gradient(145deg, 
+                rgba(30, 30, 60, 0.9), 
+                rgba(20, 20, 40, 0.9));
+            border: 1px solid rgba(157, 77, 255, 0.5);
             color: var(--quantum-text);
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             position: relative;
             overflow: hidden;
+        }
+
+        .player-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--quantum-gradient);
+            opacity: 0;
+            transition: opacity 0.4s;
         }
 
         .player-btn:hover {
-            transform: translateY(-3px) scale(1.1);
+            transform: translateY(-5px) scale(1.15);
             background: var(--music-control-bg);
             border-color: var(--quantum-primary);
             box-shadow: 
-                0 10px 25px rgba(255, 46, 147, 0.4),
-                0 0 20px rgba(157, 77, 255, 0.5);
-        }
-
-        .player-btn.play-pause {
-            width: 62px;
-            height: 62px;
-            background: var(--quantum-gradient);
-            border: none;
-            box-shadow: 0 10px 30px rgba(255, 46, 147, 0.5);
-        }
-
-        .player-btn.play-pause:hover {
-            transform: translateY(-3px) scale(1.15);
-            box-shadow: 
-                0 15px 35px rgba(255, 46, 147, 0.6),
+                0 15px 35px rgba(255, 46, 147, 0.5),
                 0 0 30px rgba(157, 77, 255, 0.6);
         }
 
-        .player-btn i {
-            position: relative;
-            z-index: 1;
+        .player-btn:hover::before {
+            opacity: 0.3;
         }
 
-        .player-visualizer {
-            width: 100%;
-            height: 60px;
-            margin-top: 1.5rem;
-            border-radius: 12px;
-            background: rgba(10, 10, 26, 0.5);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .visualizer-bars {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-around;
-            width: 100%;
-            height: 100%;
-            padding: 10px;
-        }
-
-        .visualizer-bar {
-            width: 6px;
+        .player-btn.play-pause {
+            width: 70px;
+            height: 70px;
             background: var(--quantum-gradient);
-            border-radius: 3px;
-            transition: height 0.2s ease;
+            border: none;
+            box-shadow: 0 15px 40px rgba(255, 46, 147, 0.6);
         }
 
-        @keyframes progressShine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+        .player-btn.play-pause:hover {
+            transform: translateY(-5px) scale(1.2);
+            box-shadow: 
+                0 20px 45px rgba(255, 46, 147, 0.7),
+                0 0 40px rgba(157, 77, 255, 0.8);
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .hero-name {
+                font-size: 5.5rem;
+            }
+            
+            .best-friend-title {
+                font-size: 3.8rem;
+            }
+            
+            .best-friend-title i {
+                font-size: 3rem;
+            }
+            
+            .pharmacy-symbol {
+                width: 400px;
+                height: 400px;
+            }
+            
+            .pharmacy-icon i {
+                font-size: 8rem;
+            }
+            
+            .pharmacy-badge {
+                padding: 0.9rem 1.8rem;
+            }
+            
+            .pharmacy-badge span {
+                font-size: 1.2rem;
+            }
+        }
+
         @media (max-width: 1024px) {
             .sidebar-controls {
                 left: 1rem;
-                padding: 1rem;
+                padding: 1.2rem;
             }
             
             .control-btn {
-                width: 50px;
-                height: 50px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.2rem;
             }
             
             .hero-content,
             .about-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 3rem;
             }
             
-            .medical-symbol {
-                width: 300px;
-                height: 300px;
+            .pharmacy-symbol {
+                width: 350px;
+                height: 350px;
                 order: -1;
             }
             
-            .medical-icon i {
-                font-size: 6rem;
+            .pharmacy-icon i {
+                font-size: 7rem;
             }
             
-            .hero-title {
-                font-size: 3rem;
+            .hero-name {
+                font-size: 4.5rem;
+            }
+            
+            .best-friend-title {
+                font-size: 3.2rem;
+                justify-content: center;
+            }
+            
+            .pharmacy-badge {
+                padding: 0.8rem 1.6rem;
+            }
+            
+            .pharmacy-badge span {
+                font-size: 1.1rem;
             }
             
             .about-title {
-                font-size: 2.8rem;
+                font-size: 3.2rem;
             }
             
             .features-grid {
@@ -1148,32 +1398,66 @@
                 margin: 0 auto;
             }
             
-            .hero-title {
-                font-size: 2.5rem;
+            .hero-name {
+                font-size: 3.5rem;
             }
             
-            .about-title {
+            .best-friend-title {
+                font-size: 2.6rem;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            
+            .best-friend-title i {
                 font-size: 2.2rem;
             }
             
+            .about-title {
+                font-size: 2.8rem;
+            }
+            
             .page {
-                padding: 5rem 1rem 1rem;
+                padding: 5rem 1.5rem 1.5rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pharmacy-badge {
+                padding: 0.7rem 1.4rem;
+            }
+            
+            .pharmacy-badge span {
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
-            .medical-symbol {
-                width: 250px;
-                height: 250px;
+            .pharmacy-symbol {
+                width: 280px;
+                height: 280px;
             }
             
-            .medical-icon i {
-                font-size: 4rem;
+            .pharmacy-icon i {
+                font-size: 5rem;
             }
             
             .nav-btn {
-                padding: 0.6rem 1rem;
+                padding: 0.7rem 1.2rem;
                 font-size: 0.9rem;
+            }
+            
+            .hero-name {
+                font-size: 2.8rem;
+            }
+            
+            .best-friend-title {
+                font-size: 2rem;
+            }
+            
+            .best-friend-title i {
+                font-size: 1.8rem;
             }
             
             .hero-stats {
@@ -1182,17 +1466,29 @@
             
             .music-player {
                 padding: 1.5rem;
-                border-radius: 20px;
+                border-radius: 22px;
             }
             
             .player-btn {
-                width: 48px;
-                height: 48px;
+                width: 52px;
+                height: 52px;
             }
             
             .player-btn.play-pause {
-                width: 56px;
-                height: 56px;
+                width: 62px;
+                height: 62px;
+            }
+            
+            .pharmacy-badge {
+                padding: 0.6rem 1.2rem;
+            }
+            
+            .pharmacy-badge span {
+                font-size: 0.9rem;
+            }
+            
+            .pharmacy-badge i {
+                font-size: 1.4rem;
             }
         }
 
@@ -1211,16 +1507,22 @@
 
         /* ===== SCROLLBAR ===== */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 12px;
         }
 
         ::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
         }
 
         ::-webkit-scrollbar-thumb {
             background: var(--quantum-gradient);
-            border-radius: 5px;
+            border-radius: 6px;
+            border: 2px solid var(--quantum-bg);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-gradient);
         }
 
         ::selection {
@@ -1242,13 +1544,13 @@
         <div class="meteor-shower" id="meteorShower"></div>
     </div>
 
-    <!-- Sidebar Controls (Left Side) -->
+    <!-- Enhanced Sidebar Controls -->
     <div class="sidebar-controls">
         <button class="control-btn active" data-page="home" title="Home">
             <i class="fas fa-home"></i>
         </button>
         <button class="control-btn" data-page="about" title="About">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-user-circle"></i>
         </button>
         <button class="control-btn" data-page="education" title="Education">
             <i class="fas fa-graduation-cap"></i>
@@ -1267,7 +1569,7 @@
         </button>
     </div>
 
-    <!-- Top Navigation -->
+    <!-- Enhanced Top Navigation -->
     <nav class="top-nav">
         <button class="nav-btn active" data-page="home">Home</button>
         <button class="nav-btn" data-page="about">About</button>
@@ -1278,76 +1580,112 @@
 
     <!-- Multi-Page Container -->
     <div class="pages-container">
-        <!-- Home Page -->
+        <!-- Enhanced Home Page -->
         <section class="page active" id="home-page">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Dr. Nour</h1>
+                    <div class="name-container">
+                        <h1 class="hero-name">NOUR</h1>
+                        
+                        <!-- BIG "NOUR my best friend" TITLE -->
+                        <div class="best-friend-title">
+                            <i class="fas fa-crown"></i>
+                            <span>NOUR my best friend</span>
+                        </div>
+                        
+                        <!-- Pharmacy Description Badge -->
+                        <div class="pharmacy-badge">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Pharmacy Visionary & Healthcare Innovator</span>
+                        </div>
+                    </div>
+                    
                     <p class="hero-subtitle">
-                        Distinguished Medical Doctor & Visionary Innovator. 
-                        Transforming healthcare through cutting-edge medical approaches and innovative technology.
+                        A dedicated second-year pharmacy student at Pharos University in Alexandria, Egypt. 
+                        Passionately pursuing pharmaceutical excellence with a vision to revolutionize healthcare 
+                        through innovation, research, and compassionate patient care.
                     </p>
                     
                     <div class="hero-stats">
                         <div class="stat-box">
                             <div class="stat-number">20</div>
-                            <div class="stat-label">Years Old</div>
+                            <div class="stat-label">Years Young</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-number">MD</div>
-                            <div class="stat-label">Medical Doctor</div>
+                            <div class="stat-number">2nd</div>
+                            <div class="stat-label">Year Pharmacy Student</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">Years Experience</div>
+                            <div class="stat-number">Egypt</div>
+                            <div class="stat-label">Proudly From</div>
                         </div>
                     </div>
 
-                    <div class="mt-3">
-                        <button class="nav-btn" id="contactBtn">
-                            <i class="fas fa-envelope"></i>
-                            Contact for Consultation
+                    <div class="mt-4">
+                        <button class="nav-btn" id="contactBtn" style="padding: 1rem 2.5rem;">
+                            <i class="fas fa-paper-plane"></i>
+                            Connect With Me
                         </button>
                     </div>
                 </div>
                 
-                <div class="medical-symbol">
-                    <div class="medical-orb"></div>
-                    <div class="medical-frame"></div>
-                    <div class="medical-icon">
-                        <i class="fas fa-stethoscope"></i>
-                        <span>Distinguished<br>Doctor</span>
+                <!-- Enhanced Pharmacy Symbol -->
+                <div class="pharmacy-symbol">
+                    <div class="pharmacy-orb"></div>
+                    <div class="pharmacy-frame"></div>
+                    
+                    <div class="pharmacy-icon">
+                        <i class="fas fa-pills"></i>
+                        <span>Pharmaceutical<br>Excellence</span>
+                    </div>
+                    <div class="floating-icons">
+                        <div class="floating-icon" style="top: 20%; left: 10%; animation-delay: 0s;">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="floating-icon" style="top: 70%; left: 80%; animation-delay: 5s;">
+                            <i class="fas fa-prescription-bottle-alt"></i>
+                        </div>
+                        <div class="floating-icon" style="top: 80%; left: 20%; animation-delay: 10s;">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <div class="floating-icon" style="top: 30%; left: 75%; animation-delay: 15s;">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Page -->
+        <!-- Enhanced About Page -->
         <section class="page" id="about-page">
             <div class="about-content">
                 <div>
-                    <h2 class="about-title gradient-text">About Me</h2>
+                    <h2 class="about-title gradient-text">About Dr. NOUR</h2>
                     <div class="about-text">
-                        <p>I am a passionate medical doctor specializing in innovative healthcare methodologies that merge advanced medical practices with modern technology.</p>
+                        <p>I am Dr. NOUR, a passionate pharmacy student with a vision to transform healthcare through pharmaceutical innovation. My journey is driven by a deep commitment to scientific excellence and patient-centered care.</p>
                         
-                        <p>Born in 2006, currently 20 years old with over 5 years of medical experience, I bring a fresh and innovative perspective to healthcare and patient treatment.</p>
+                        <p>Born in 2006, currently 20 years old, I am pursuing my pharmacy degree at one of Egypt's most prestigious institutions, combining rigorous academic training with practical healthcare experience.</p>
                         
-                        <div class="personal-info mt-3">
-                            <div class="info-item">
-                                <i class="fas fa-birthday-cake"></i>
-                                <span><strong>Age:</strong> 20 years old (Born: 2006)</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span><strong>From:</strong> Algeria</span>
-                            </div>
+                        <div class="personal-info mt-4">
                             <div class="info-item">
                                 <i class="fas fa-user-md"></i>
-                                <span><strong>Specialization:</strong> General Medicine & Medical Innovation</span>
+                                <span><strong>Dr. NOUR</strong> - Pharmacy Student</span>
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-briefcase"></i>
-                                <span><strong>Experience:</strong> 5+ years in medical practice</span>
+                                <i class="fas fa-birthday-cake"></i>
+                                <span><strong>Born:</strong> 2006 (20 years old)</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-flag"></i>
+                                <span><strong>From:</strong> Egypt</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-university"></i>
+                                <span><strong>University:</strong> Pharos University in Alexandria, Egypt</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span><strong>Field:</strong> Pharmacy (Second Year Student)</span>
                             </div>
                         </div>
                     </div>
@@ -1355,45 +1693,38 @@
                 
                 <div>
                     <div class="about-text">
-                        <h3 class="gradient-text" style="margin-bottom: 1rem;">Medical Philosophy</h3>
-                        <p>My approach combines traditional medical excellence with modern technology and innovative treatment techniques to provide comprehensive, compassionate patient care.</p>
+                        <h3 class="gradient-text" style="margin-bottom: 1.5rem; font-size: 2.2rem;">
+                            <i class="fas fa-bullseye"></i>
+                            Vision & Mission
+                        </h3>
+                        <p>My mission is to bridge the gap between pharmaceutical science and patient care, leveraging cutting-edge research to develop innovative healthcare solutions that improve lives and advance medical science.</p>
                         
-                        <!-- Professional Developer Message -->
+                        <!-- Enhanced Developer Message -->
                         <div class="developer-message mt-4">
                             <div class="message-header">
-                                <i class="fas fa-comment-dots"></i>
-                                <h4 style="color: var(--quantum-accent); margin: 0;">Message from the Developer</h4>
+                                <i class="fas fa-code"></i>
+                                <h4>Professional Message from Developer</h4>
                             </div>
                             
                             <div class="message-content">
-                                <p>To Dr. Nour,</p>
+                                <p>To the esteemed Dr. NOUR,</p>
                                 
-                                <p>I am writing to express my sincere regret for any previous misunderstandings or discomfort I may have caused. My intentions were always rooted in respect and admiration for your professional achievements and personal character.</p>
+                                <p>I am writing to extend my deepest professional respect and admiration for your dedication to pharmaceutical education and healthcare advancement. Your commitment to excellence in pharmacy studies is truly inspiring.</p>
                                 
-                                <p>I hold our previous interactions in high regard and would be honored to reestablish a professional friendship based on mutual respect and understanding. Your remarkable journey in medicine is truly inspiring, and your dedication to healthcare innovation is commendable.</p>
+                                <p>This platform was meticulously designed to reflect your professional journey and academic achievements. Every element was crafted with precision to showcase your potential as a future healthcare leader.</p>
                                 
-                                <p>Should you be open to reconnecting, I would welcome the opportunity to engage in meaningful dialogue and professional exchange. Your perspective as a distinguished medical professional would be invaluable, and I am committed to maintaining the utmost respect for your boundaries and preferences.</p>
+                                <p>Should you have any technical requests or wish to enhance this digital presence further, I am at your service. Your vision deserves a platform that matches its ambition.</p>
                                 
-                                <p>Regardless of your decision, please accept my best wishes for your continued success in medicine. You are making a significant impact in healthcare, and your work deserves recognition and support.</p>
-                                
-                                <p>With professional regards and sincere admiration.</p>
+                                <p>Wishing you continued success in your academic journey and future pharmaceutical career.</p>
                             </div>
                             
                             <div class="message-signature">
-                                <p>Respectfully,</p>
+                                <p>With professional regards,</p>
                                 <p><strong>Shihab</strong></p>
-                                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-top: 0.5rem;">Website Developer & Technical Consultant</p>
+                                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; margin-top: 0.5rem;">
+                                    Senior Full-Stack Developer & UI/UX Specialist
+                                </p>
                             </div>
-                        </div>
-                        
-                        <!-- Developer Note -->
-                        <div class="developer-note mt-3">
-                            <p><strong>Technical Note:</strong></p>
-                            <p style="font-style: italic; color: rgba(255, 255, 255, 0.9);">
-                                "This quantum-inspired platform was developed to showcase Dr. Nour's professional journey and medical expertise. The design incorporates advanced animations and responsive technology to create an engaging digital presence that reflects her innovative approach to medicine."
-                                <br><br>
-                                <strong>- Shihab, Technical Developer</strong>
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -1404,93 +1735,50 @@
         <section class="page" id="education-page">
             <div class="education-content">
                 <div class="education-header">
-                    <h2 class="about-title gradient-text">Medical Education & Training</h2>
-                    <p class="about-text mt-2">
-                        My academic journey at Pharos University in Alexandria, Egypt - Faculty of Medicine.
+                    <h2 class="about-title gradient-text">Pharmaceutical Education</h2>
+                    <p class="about-text mt-2" style="max-width: 800px; margin: 0 auto;">
+                        Pursuing excellence in pharmaceutical sciences at Pharos University in Alexandria, Egypt - 
+                        one of the leading institutions for healthcare education in the region.
                     </p>
                 </div>
                 
                 <div class="university-card">
-                    <h3 style="color: var(--quantum-accent); margin-bottom: 1rem;">
+                    <h3 style="color: var(--quantum-accent); margin-bottom: 1.5rem; font-size: 1.8rem;">
                         <i class="fas fa-university"></i>
                         Pharos University in Alexandria (PUA), Egypt
                     </h3>
-                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem;">
-                        Completed Medical Doctor (MD) degree from the distinguished Faculty of Medicine at PUA.
+                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                        Currently excelling in the Bachelor of Pharmacy (B.Pharm) program at the distinguished 
+                        Faculty of Pharmacy, blending theoretical knowledge with practical pharmaceutical training.
                     </p>
-                    
-                    <div class="major-info mt-2">
-                        <h4 class="gradient-text" style="margin-bottom: 1rem;">Medical Program Details (MBBS/MD):</h4>
-                        <ul style="color: rgba(255, 255, 255, 0.8); line-height: 1.8; padding-left: 1.5rem;">
-                            <li><strong>Duration:</strong> 6-year integrated medical program (MBBS/MD)</li>
-                            <li><strong>Degree:</strong> Bachelor of Medicine, Bachelor of Surgery (MBBS) / Medical Doctor (MD)</li>
-                            <li><strong>Accreditation:</strong> Fully accredited by the Egyptian Ministry of Higher Education</li>
-                            <li><strong>Language:</strong> English-based medical curriculum</li>
-                            <li><strong>Clinical Training:</strong> Extensive hands-on training in affiliated hospitals</li>
-                            <li><strong>Specializations:</strong> Comprehensive coverage of all medical disciplines</li>
-                        </ul>
-                    </div>
                     
                     <div class="features-grid">
                         <div class="feature-card">
-                            <i class="fas fa-hospital"></i>
-                            <h4>Modern Facilities</h4>
-                            <p>State-of-the-art laboratories and simulation centers for practical training.</p>
+                            <i class="fas fa-flask"></i>
+                            <h4>Modern Laboratories</h4>
+                            <p>State-of-the-art pharmaceutical labs equipped with the latest technology for hands-on research and experimentation.</p>
                         </div>
                         <div class="feature-card">
                             <i class="fas fa-users"></i>
                             <h4>Expert Faculty</h4>
-                            <p>Experienced professors and medical practitioners from renowned institutions.</p>
+                            <p>Learning from distinguished professors and industry professionals with extensive pharmaceutical experience.</p>
                         </div>
                         <div class="feature-card">
-                            <i class="fas fa-globe"></i>
-                            <h4>International Standards</h4>
-                            <p>Curriculum designed to meet international medical education standards.</p>
+                            <i class="fas fa-book-open"></i>
+                            <h4>Comprehensive Curriculum</h4>
+                            <p>Well-structured program covering all aspects of pharmaceutical sciences and patient care.</p>
                         </div>
                         <div class="feature-card">
                             <i class="fas fa-handshake"></i>
-                            <h4>Hospital Affiliations</h4>
-                            <p>Strong partnerships with major hospitals for clinical rotations.</p>
+                            <h4>Industry Connections</h4>
+                            <p>Strong partnerships with pharmaceutical companies and healthcare institutions for practical exposure.</p>
                         </div>
                     </div>
                     
-                    <a href="https://pharfac.mans.edu.eg" target="_blank" class="university-btn mt-3">
+                    <a href="https://www.pua.edu.eg" target="_blank" class="university-btn mt-4">
                         <i class="fas fa-external-link-alt"></i>
-                        Visit PUA Faculty of Medicine Website
+                        Explore Pharos University
                     </a>
-                </div>
-                
-                <div class="university-card mt-4">
-                    <h3 style="color: var(--quantum-accent); margin-bottom: 1rem;">
-                        <i class="fas fa-star"></i>
-                        Features of Faculty of Medicine - Pharos University Alexandria
-                    </h3>
-                    
-                    <div class="major-info">
-                        <h4 class="gradient-text" style="margin-bottom: 1rem;">Academic Excellence:</h4>
-                        <ul style="color: rgba(255, 255, 255, 0.8); line-height: 1.8; padding-left: 1.5rem;">
-                            <li><strong>Integrated Curriculum:</strong> Comprehensive medical program based on latest global standards</li>
-                            <li><strong>Practical Training:</strong> Over 5000 hours of intensive clinical training</li>
-                            <li><strong>Teaching Hospitals:</strong> Partnerships with major teaching hospitals in Alexandria</li>
-                            <li><strong>Advanced Laboratories:</strong> Anatomy and clinical skills labs equipped with latest technology</li>
-                            <li><strong>Research Focus:</strong> Encouragement of student participation in medical research and conferences</li>
-                            <li><strong>International Training:</strong> Opportunities for summer training in international hospitals</li>
-                            <li><strong>Technology Integration:</strong> Modern technology integration in educational process</li>
-                            <li><strong>Professional Development:</strong> Continuous programs for graduate skill development</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="major-info mt-3">
-                        <h4 class="gradient-text" style="margin-bottom: 1rem;">University Facilities:</h4>
-                        <ul style="color: rgba(255, 255, 255, 0.8); line-height: 1.8; padding-left: 1.5rem;">
-                            <li>Integrated Medical Simulation Center</li>
-                            <li>Medical library rich with latest references and research</li>
-                            <li>Computer labs and digital library</li>
-                            <li>Lecture halls equipped with modern presentation tools</li>
-                            <li>Clinical Skills Laboratory</li>
-                            <li>Anatomy lab equipped with latest technology</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1498,40 +1786,42 @@
         <!-- Journey Page -->
         <section class="page" id="journey-page">
             <div class="journey-content">
-                <h2 class="about-title gradient-text text-center">My Medical Journey</h2>
-                <p class="about-text text-center mt-2">
-                    The professional path that led me to become a distinguished medical doctor.
+                <h2 class="about-title gradient-text text-center">Academic Journey</h2>
+                <p class="about-text text-center mt-2" style="max-width: 800px; margin: 0 auto;">
+                    The path to pharmaceutical excellence - from foundational studies to specialized pharmaceutical training.
                 </p>
                 
-                <div class="timeline">
+                <div class="timeline mt-4">
                     <div class="timeline-item">
-                        <h3 class="gradient-text" style="margin-bottom: 0.5rem;">2014 - Medical School Admission</h3>
-                        <p>Began my medical studies at Pharos University Faculty of Medicine in Alexandria, Egypt.</p>
+                        <h3 class="gradient-text" style="margin-bottom: 0.8rem; font-size: 1.5rem;">
+                            <i class="fas fa-calendar-alt"></i>
+                            2023 - Pharmacy Program Admission
+                        </h3>
+                        <p>Successfully enrolled in the Bachelor of Pharmacy program at Pharos University Faculty of Pharmacy, beginning my journey in pharmaceutical sciences.</p>
                     </div>
                     
                     <div class="timeline-item">
-                        <h3 class="gradient-text" style="margin-bottom: 0.5rem;">2016-2019 - Clinical Training</h3>
-                        <p>Extensive clinical rotations in affiliated hospitals including Alexandria Main University Hospital.</p>
+                        <h3 class="gradient-text" style="margin-bottom: 0.8rem; font-size: 1.5rem;">
+                            <i class="fas fa-book"></i>
+                            2023-2024 - Foundational Studies
+                        </h3>
+                        <p>Mastered core pharmaceutical foundations including chemistry, biology, mathematics, and introductory pharmaceutical sciences.</p>
                     </div>
                     
                     <div class="timeline-item">
-                        <h3 class="gradient-text" style="margin-bottom: 0.5rem;">2020 - Medical Graduation</h3>
-                        <p>Graduated with MBBS/MD degree from Pharos University Faculty of Medicine with honors.</p>
+                        <h3 class="gradient-text" style="margin-bottom: 0.8rem; font-size: 1.5rem;">
+                            <i class="fas fa-pills"></i>
+                            2024 - Specialized Pharmaceutical Courses
+                        </h3>
+                        <p>Advanced to specialized pharmacy courses including pharmacology, pharmaceutics, medicinal chemistry, and pharmaceutical analysis.</p>
                     </div>
                     
                     <div class="timeline-item">
-                        <h3 class="gradient-text" style="margin-bottom: 0.5rem;">2021 - Internship & Specialization</h3>
-                        <p>Completed medical internship and began specialization in General Medicine.</p>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h3 class="gradient-text" style="margin-bottom: 0.5rem;">2022 - Professional Practice</h3>
-                        <p>Started professional medical practice with focus on innovative treatment approaches.</p>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h3 class="gradient-text" style="margin-bottom: 0.5rem;">2023 - Present</h3>
-                        <p>Continuing medical practice while integrating modern technology in healthcare services.</p>
+                        <h3 class="gradient-text" style="margin-bottom: 0.8rem; font-size: 1.5rem;">
+                            <i class="fas fa-chart-line"></i>
+                            2025 - Second Year Advancement
+                        </h3>
+                        <p>Currently progressing through second-year studies with focus on drug development, patient care, and pharmaceutical research methodologies.</p>
                     </div>
                 </div>
             </div>
@@ -1540,42 +1830,43 @@
         <!-- Contact Page -->
         <section class="page" id="contact-page">
             <div class="contact-content">
-                <h2 class="about-title gradient-text">Connect With Me</h2>
-                <p class="about-text mt-2">
-                    Available for medical consultations, healthcare collaborations, or discussions about medical innovation.
+                <h2 class="about-title gradient-text">Professional Connections</h2>
+                <p class="about-text mt-2" style="max-width: 700px; margin: 0 auto;">
+                    Open to academic collaborations, pharmaceutical research discussions, and connections with healthcare professionals.
                 </p>
                 
                 <div class="design-card mt-4">
-                    <h3 style="color: var(--quantum-accent); margin-bottom: 1rem;">
-                        <i class="fas fa-stethoscope"></i>
-                        Medical Consultation
+                    <h3 style="color: var(--quantum-accent); margin-bottom: 1.5rem; font-size: 1.8rem;">
+                        <i class="fas fa-network-wired"></i>
+                        Connect & Collaborate
                     </h3>
-                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.8;">
-                        For medical consultations or healthcare-related inquiries, please contact through professional medical channels.
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.8; font-size: 1.1rem;">
+                        As a dedicated pharmacy student with a vision for healthcare innovation, I welcome opportunities 
+                        for academic exchange, research collaboration, and professional networking.
                     </p>
                     
-                    <div style="margin-top: 2rem;">
-                        <h4 class="gradient-text" style="margin-bottom: 1rem;">Professional Information</h4>
+                    <div style="margin-top: 3rem;">
+                        <h4 class="gradient-text" style="margin-bottom: 1.5rem; font-size: 1.5rem;">Academic Profile</h4>
                         <div class="personal-info">
                             <div class="info-item">
-                                <i class="fas fa-user-md"></i>
-                                <span><strong>Title:</strong> Dr. Nour - Medical Doctor</span>
+                                <i class="fas fa-user-circle"></i>
+                                <span><strong>Dr. NOUR</strong> - Pharmacy Student</span>
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-birthday-cake"></i>
-                                <span><strong>Born:</strong> 2006 (20 years old)</span>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Location:</strong> Egypt</span>
                             </div>
                             <div class="info-item">
                                 <i class="fas fa-university"></i>
-                                <span><strong>Alma Mater:</strong> Pharos University in Alexandria, Egypt</span>
+                                <span><strong>Institution:</strong> Pharos University, Alexandria</span>
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-briefcase-medical"></i>
-                                <span><strong>Specialization:</strong> General Medicine & Healthcare Innovation</span>
+                                <i class="fas fa-book-medical"></i>
+                                <span><strong>Program:</strong> Bachelor of Pharmacy (Second Year)</span>
                             </div>
                             <div class="info-item">
-                                <i class="fas fa-clock"></i>
-                                <span><strong>Experience:</strong> 5+ years in medical practice</span>
+                                <i class="fas fa-star"></i>
+                                <span><strong>Focus:</strong> Pharmaceutical Research & Innovation</span>
                             </div>
                         </div>
                     </div>
@@ -1584,11 +1875,11 @@
         </section>
     </div>
 
-    <!-- Music Player -->
+    <!-- Enhanced Music Player -->
     <div class="music-player" id="musicPlayer">
         <div class="player-header">
-            <h3>Quantum Audio Player</h3>
-            <button class="player-btn" id="closePlayer" style="width: 42px; height: 42px;">
+            <h3>Quantum Harmony</h3>
+            <button class="player-btn" id="closePlayer" style="width: 48px; height: 48px;">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -1652,7 +1943,7 @@
                 const shower = document.getElementById('meteorShower');
                 
                 // Create meteors
-                for (let i = 0; i < 15; i++) {
+                for (let i = 0; i < 20; i++) {
                     createMeteor();
                 }
 
@@ -1868,7 +2159,7 @@
                 const visualizerBars = document.getElementById('visualizerBars');
                 
                 // Create bars
-                for (let i = 0; i < 20; i++) {
+                for (let i = 0; i < 24; i++) {
                     const bar = document.createElement('div');
                     bar.className = 'visualizer-bar';
                     bar.style.height = `${Math.random() * 30 + 10}%`;
@@ -1881,20 +2172,23 @@
                 
                 visualizerInterval = setInterval(() => {
                     const bars = document.querySelectorAll('.visualizer-bar');
-                    bars.forEach(bar => {
-                        // Random height change with smooth transition
-                        const newHeight = Math.random() * 80 + 10;
+                    bars.forEach((bar, index) => {
+                        // Create wave-like effect
+                        const newHeight = Math.sin(Date.now() * 0.002 + index * 0.3) * 40 + 50;
                         bar.style.height = `${newHeight}%`;
                         
-                        // Random color variation
-                        if (Math.random() > 0.7) {
-                            const hue = Math.floor(Math.random() * 60) + 270; // Purple range
-                            bar.style.background = `linear-gradient(to top, hsla(${hue}, 100%, 60%, 0.9), hsla(${hue}, 100%, 80%, 0.7))`;
+                        // Color variation based on frequency
+                        if (index % 4 === 0) {
+                            bar.style.background = 'linear-gradient(to top, #FF2E93, #9D4DFF)';
+                        } else if (index % 4 === 1) {
+                            bar.style.background = 'linear-gradient(to top, #9D4DFF, #00F7FF)';
+                        } else if (index % 4 === 2) {
+                            bar.style.background = 'linear-gradient(to top, #00F7FF, #FF2E93)';
                         } else {
                             bar.style.background = 'var(--quantum-gradient)';
                         }
                     });
-                }, 150);
+                }, 50);
             }
 
             function stopVisualizer() {
@@ -1943,7 +2237,7 @@
                     z-index: 9999;
                     opacity: 0;
                     pointer-events: none;
-                    animation: themeChange 1s ease-out;
+                    animation: themeChange 1.2s ease-out;
                 `;
                 
                 document.body.appendChild(transition);
@@ -1951,15 +2245,15 @@
                 // Remove after animation
                 setTimeout(() => {
                     transition.remove();
-                }, 1000);
+                }, 1200);
                 
                 // Add animation style
                 const style = document.createElement('style');
                 style.textContent = `
                     @keyframes themeChange {
-                        0% { opacity: 0; }
-                        50% { opacity: 0.5; }
-                        100% { opacity: 0; }
+                        0% { opacity: 0; transform: scale(1); }
+                        50% { opacity: 0.6; transform: scale(1.02); }
+                        100% { opacity: 0; transform: scale(1); }
                     }
                 `;
                 document.head.appendChild(style);
@@ -1979,43 +2273,129 @@
                     createClickEffect(e);
                 });
 
-                // Medical icon click
-                const medicalIcon = document.querySelector('.medical-icon');
-                medicalIcon.addEventListener('click', (e) => {
+                // Pharmacy icon click
+                const pharmacyIcon = document.querySelector('.pharmacy-icon');
+                pharmacyIcon.addEventListener('click', (e) => {
                     createClickEffect(e);
                     
-                    // Animate medical icon
-                    const medicalFrame = document.querySelector('.medical-frame');
-                    gsap.to(medicalFrame, {
-                        rotation: '+=360',
-                        duration: 2,
+                    // Animate pharmacy frame
+                    const pharmacyFrame = document.querySelector('.pharmacy-frame');
+                    gsap.to(pharmacyFrame, {
+                        rotation: '+=720',
+                        duration: 3,
                         ease: "back.out(1.7)"
+                    });
+                    
+                    // Pulse animation
+                    gsap.to('.pharmacy-orb', {
+                        scale: 1.3,
+                        opacity: 0.6,
+                        duration: 0.5,
+                        yoyo: true,
+                        repeat: 1,
+                        ease: "power2.inOut"
                     });
                 });
 
-                // Enhanced hover effects for Dr. Nour text
-                const nourElements = document.querySelectorAll('.hero-title, .gradient-text');
-                nourElements.forEach(element => {
-                    element.addEventListener('mouseenter', () => {
-                        gsap.to(element, {
-                            scale: element.classList.contains('hero-title') ? 1.08 : 1.05,
-                            duration: 0.3,
-                            ease: "back.out(1.7)"
-                        });
-                        
-                        // Add glow effect
-                        element.classList.add('glow-text');
+                // Enhanced hover effects for NOUR text
+                const heroName = document.querySelector('.hero-name');
+                heroName.addEventListener('mouseenter', () => {
+                    gsap.to(heroName, {
+                        scale: 1.08,
+                        letterSpacing: '4px',
+                        duration: 0.4,
+                        ease: "back.out(1.7)"
                     });
                     
-                    element.addEventListener('mouseleave', () => {
-                        gsap.to(element, {
-                            scale: 1,
-                            duration: 0.3,
-                            ease: "power2.out"
-                        });
-                        
-                        // Remove glow effect
-                        element.classList.remove('glow-text');
+                    // Add glow effect
+                    heroName.classList.add('glow-text');
+                });
+                
+                heroName.addEventListener('mouseleave', () => {
+                    gsap.to(heroName, {
+                        scale: 1,
+                        letterSpacing: '2px',
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+                    
+                    // Remove glow effect
+                    heroName.classList.remove('glow-text');
+                });
+
+                // Hover effect for best friend title
+                const bestFriendTitle = document.querySelector('.best-friend-title');
+                bestFriendTitle.addEventListener('mouseenter', () => {
+                    gsap.to(bestFriendTitle, {
+                        scale: 1.08,
+                        letterSpacing: '3px',
+                        duration: 0.4,
+                        ease: "back.out(1.7)"
+                    });
+                    
+                    // Add extra glow
+                    gsap.to(bestFriendTitle, {
+                        textShadow: '0 0 60px rgba(255, 215, 0, 0.8), 0 0 100px rgba(255, 165, 0, 0.6), 0 0 140px rgba(255, 236, 139, 0.4)',
+                        duration: 0.4
+                    });
+                });
+                
+                bestFriendTitle.addEventListener('mouseleave', () => {
+                    gsap.to(bestFriendTitle, {
+                        scale: 1,
+                        letterSpacing: '1.5px',
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+                    
+                    // Reset glow
+                    gsap.to(bestFriendTitle, {
+                        textShadow: '0 0 30px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 165, 0, 0.4), 0 0 90px rgba(255, 236, 139, 0.2)',
+                        duration: 0.4
+                    });
+                });
+
+                // Crown animation on click
+                const crownIcon = document.querySelector('.best-friend-title i');
+                crownIcon.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    createClickEffect(e);
+                    
+                    // Bounce animation
+                    gsap.to(crownIcon, {
+                        y: -20,
+                        scale: 1.3,
+                        duration: 0.3,
+                        ease: "back.out(1.7)",
+                        onComplete: () => {
+                            gsap.to(crownIcon, {
+                                y: 0,
+                                scale: 1,
+                                duration: 0.5,
+                                ease: "bounce.out"
+                            });
+                        }
+                    });
+                    
+                    // Sparkle effect
+                    createSparkleEffect(e.clientX, e.clientY);
+                });
+
+                // Pharmacy badge hover
+                const pharmacyBadge = document.querySelector('.pharmacy-badge');
+                pharmacyBadge.addEventListener('mouseenter', () => {
+                    gsap.to(pharmacyBadge, {
+                        scale: 1.05,
+                        duration: 0.3,
+                        ease: "back.out(1.7)"
+                    });
+                });
+                
+                pharmacyBadge.addEventListener('mouseleave', () => {
+                    gsap.to(pharmacyBadge, {
+                        scale: 1,
+                        duration: 0.3,
+                        ease: "power2.out"
                     });
                 });
             }
@@ -2039,63 +2419,128 @@
                     transform: translate(-50%, -50%);
                     pointer-events: none;
                     z-index: 10000;
-                    opacity: 0.7;
-                    filter: blur(2px);
+                    opacity: 0.8;
+                    filter: blur(3px);
                 `;
                 
                 document.body.appendChild(ripple);
                 
                 // Animate ripple
                 gsap.to(ripple, {
-                    width: 100,
-                    height: 100,
+                    width: 120,
+                    height: 120,
                     opacity: 0,
-                    duration: 0.8,
+                    duration: 1,
                     ease: "power2.out",
                     onComplete: () => ripple.remove()
                 });
             }
 
+            function createSparkleEffect(x, y) {
+                // Create multiple sparkles
+                for (let i = 0; i < 8; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.style.cssText = `
+                        position: fixed;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: #FFD700;
+                        left: ${x}px;
+                        top: ${y}px;
+                        pointer-events: none;
+                        z-index: 10000;
+                        opacity: 0.9;
+                        filter: blur(1px);
+                    `;
+                    
+                    document.body.appendChild(sparkle);
+                    
+                    // Random direction and distance
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = 30 + Math.random() * 50;
+                    const targetX = x + Math.cos(angle) * distance;
+                    const targetY = y + Math.sin(angle) * distance;
+                    
+                    // Animate sparkle
+                    gsap.to(sparkle, {
+                        x: targetX - x,
+                        y: targetY - y,
+                        opacity: 0,
+                        scale: 0,
+                        duration: 0.8 + Math.random() * 0.4,
+                        ease: "power2.out",
+                        onComplete: () => sparkle.remove()
+                    });
+                }
+            }
+
             // ===== ANIMATIONS =====
             function initAnimations() {
                 // GSAP animations for page transitions
-                gsap.from('.hero-title', {
-                    duration: 1.2,
-                    y: 50,
+                gsap.from('.hero-name', {
+                    duration: 1.5,
+                    y: 60,
                     opacity: 0,
                     ease: "power4.out",
                     delay: 0.3
                 });
 
-                gsap.from('.hero-subtitle', {
-                    duration: 1,
-                    y: 30,
+                gsap.from('.best-friend-title', {
+                    duration: 1.2,
+                    y: 40,
                     opacity: 0,
-                    delay: 0.6,
-                    ease: "power4.out"
-                });
-
-                gsap.from('.medical-symbol', {
-                    duration: 1.5,
-                    scale: 0,
-                    rotation: 360,
+                    delay: 0.8,
                     ease: "back.out(1.7)",
-                    delay: 0.9
+                    scale: 0.8
                 });
 
-                gsap.from('.stat-box', {
-                    duration: 0.8,
+                gsap.from('.pharmacy-badge', {
+                    duration: 1.2,
                     y: 30,
                     opacity: 0,
-                    stagger: 0.1,
                     delay: 1.2,
                     ease: "back.out(1.7)"
                 });
 
+                gsap.from('.hero-subtitle', {
+                    duration: 1.2,
+                    y: 40,
+                    opacity: 0,
+                    delay: 1.6,
+                    ease: "power4.out"
+                });
+
+                gsap.from('.pharmacy-symbol', {
+                    duration: 2,
+                    scale: 0,
+                    rotation: 360,
+                    ease: "back.out(2)",
+                    delay: 2.0
+                });
+
+                gsap.from('.stat-box', {
+                    duration: 1,
+                    y: 40,
+                    opacity: 0,
+                    stagger: 0.15,
+                    delay: 2.6,
+                    ease: "back.out(1.7)"
+                });
+
                 // Continuous animations
-                gsap.to('.medical-orb', {
-                    scale: 1.1,
-                    opacity: 0.4,
+                gsap.to('.pharmacy-orb', {
+                    scale: 1.15,
+                    opacity: 0.5,
+                    duration: 2.5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+
+                // Crown bounce animation
+                gsap.to('.best-friend-title i', {
+                    rotation: 5,
                     duration: 2,
                     repeat: -1,
                     yoyo: true,
@@ -2104,13 +2549,13 @@
 
                 // Parallax effect
                 window.addEventListener('mousemove', (e) => {
-                    const x = (e.clientX / window.innerWidth - 0.5) * 10;
-                    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+                    const x = (e.clientX / window.innerWidth - 0.5) * 15;
+                    const y = (e.clientY / window.innerHeight - 0.5) * 15;
                     
-                    gsap.to('.medical-symbol', {
+                    gsap.to('.pharmacy-symbol', {
                         x: x,
                         y: y,
-                        duration: 1,
+                        duration: 1.2,
                         ease: "power2.out"
                     });
                 });
